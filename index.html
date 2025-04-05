@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Lavadora USB portátil | TURBOWASH</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #f5f5f5;
+    }
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      background: white;
+      padding: 20px;
+      display: flex;
+      gap: 20px;
+    }
+    .gallery {
+      flex: 1;
+    }
+    .main-img {
+      width: 100%;
+      height: auto;
+      border: 1px solid #ccc;
+    }
+    .thumbnails {
+      display: flex;
+      gap: 5px;
+      margin-top: 10px;
+    }
+    .thumbnail {
+      width: 60px;
+      height: 60px;
+      object-fit: cover;
+      cursor: pointer;
+      border: 2px solid transparent;
+    }
+    .thumbnail.active {
+      border: 2px solid #00b300;
+    }
+    .details {
+      flex: 1;
+    }
+    .topbar {
+      display: flex;
+      gap: 20px;
+      font-size: 14px;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+    .topbar img {
+      height: 20px;
+    }
+    .title {
+      font-size: 22px;
+      font-weight: bold;
+    }
+    .rating {
+      color: #ffa500;
+      margin: 5px 0;
+    }
+    .price-box {
+      margin: 20px 0;
+    }
+    .option {
+      display: inline-block;
+      border: 1px solid #ccc;
+      padding: 10px 15px;
+      margin-right: 10px;
+      cursor: pointer;
+    }
+    .option.active {
+      border-color: #00b300;
+      background: #e6ffe6;
+    }
+    .price {
+      font-size: 24px;
+      color: #e60000;
+    }
+    .discount {
+      text-decoration: line-through;
+      margin-left: 10px;
+      color: #888;
+    }
+    .add-cart {
+      background: #00b300;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+    .delivery {
+      margin-top: 10px;
+      font-size: 14px;
+      color: #444;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <div class="gallery">
+    <img id="mainImage" src="https://i.postimg.cc/SsHT6vKx/Chat-GPT-Image-5-abr-2025-18-30-32.png" class="main-img" alt="Producto">
+    <div class="thumbnails">
+      <img class="thumbnail active" src="https://i.postimg.cc/SsHT6vKx/Chat-GPT-Image-5-abr-2025-18-30-32.png" alt="thumb">
+      <img class="thumbnail" src="/mnt/data/image.png" alt="thumb 2">
+    </div>
+  </div>
+
+  <div class="details">
+    <div class="topbar">
+      <img src="https://images.vigo-shop.com/general/banner_icons/delivery_icon.svg" alt="delivery">
+      <span>Entrega 2-4 días</span>
+      <img src="https://images.vigo-shop.com/general/banner_icons/COD_icon.svg" alt="COD">
+      <span>Pago contra reembolso</span>
+      <img src="https://images.vigo-shop.com/general/flags/flag-icon-es.svg" alt="Spain">
+      <span>Almacén español</span>
+    </div>
+
+    <div class="title">Lavadora USB portátil | TURBOWASH</div>
+    <div class="rating">⭐ 4.6 / 5 (Opiniones: 2852)</div>
+    <p>La minilavadora es un artilugio revolucionario que le permite revitalizar sus prendas incluso cuando no dispone de una lavadora tradicional.</p>
+
+    <div class="price-box">
+      <div id="options">
+        <div class="option active" data-price="70">1x 70€</div>
+        <div class="option" data-price="99">2x 99€</div>
+      </div>
+      <div class="price-section">
+        <span class="price" id="price">70€</span>
+        <span class="discount">100€</span>
+        <span style="color: #e60000;">-30%</span>
+      </div>
+      <button class="add-cart">🛒 Añadir a la cesta</button>
+    </div>
+
+    <div class="delivery">✅ Disponible. Envío desde almacén español.</div>
+    <div class="delivery">🚚 Entrega en 2-4 días con Delnext</div>
+    <div class="delivery">🔄 Política de devolución de 14 días</div>
+  </div>
+</div>
+
+<script>
+  // Galería de imágenes
+  const thumbnails = document.querySelectorAll(".thumbnail");
+  const mainImage = document.getElementById("mainImage");
+  thumbnails.forEach(thumb => {
+    thumb.addEventListener("click", () => {
+      thumbnails.forEach(t => t.classList.remove("active"));
+      thumb.classList.add("active");
+      mainImage.src = thumb.src;
+    });
+  });
+
+  // Opciones de cantidad y precio
+  const options = document.querySelectorAll(".option");
+  const price = document.getElementById("price");
+
+  options.forEach(opt => {
+    opt.addEventListener("click", () => {
+      options.forEach(o => o.classList.remove("active"));
+      opt.classList.add("active");
+      price.innerText = opt.dataset.price + "€";
+    });
+  });
+</script>
+
+</body>
+</html>
