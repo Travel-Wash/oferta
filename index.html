@@ -130,6 +130,10 @@
       cursor: pointer;
       box-shadow: 2px 2px 0 black;
     }
+
+    .btn-compra:hover{
+        box-shadow: none;
+    }
     .iconos-section {
       background: #c3c6a7;
       display: flex;
@@ -247,6 +251,51 @@
   color: #5e3e2f;
 }
 
+
+.otros-reviews {
+  background-color: #a2b18f;
+  padding: 2rem 1rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  justify-items: center;
+}
+
+.review-card {
+  background: white;
+  border-radius: 16px;
+  padding: 1.5rem;
+  max-width: 300px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+
+.review-card .stars {
+  color: #f6b73c;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.review-card .nombre {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  color: #333;
+}
+
+.review-card .texto {
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.4;
+}
+
+@media (min-width: 600px) {
+  .otros-reviews {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+
   </style>
 </head>
 <body>
@@ -294,7 +343,7 @@
 
   <section class="iconos-section">
     <div>
-      <img src="avion.png" alt="Icono avión" />
+      <img src="avion2.png" alt="Icono avión" />
       <p><strong>VIAJAR</strong></p>
     </div>
     <div>
@@ -311,19 +360,18 @@
     </div>
   </section>
 
-  <section class="reseñas">
-    <div class="reseña">
-      <p><strong>Juliana Silva</strong><br />
-      Me encantó el producto, sin duda volvería a comprarlo y lo recomiendo a todos.</p>
+  <section class="otros-reviews">
+    <div class="review-card">
+      <div class="stars">★★★★★</div>
+      <p class="nombre">Juliana Silva</p>
+      <p class="texto">Me encantó el producto, sin duda volvería a comprarlo y lo recomiendo a todos.</p>
     </div>
-    <div class="reseña">
-      <p><strong>Juliana Silva</strong><br />
-      Me encantó el producto, sin duda volvería a comprarlo y lo recomiendo a todos.</p>
-    </div>
-    <div class="reseña">
-      <p><strong>Juliana Silva</strong><br />
-      Me encantó el producto, sin duda volvería a comprarlo y lo recomiendo a todos.</p>
+    <div class="review-card">
+      <div class="stars">★★★★★</div>
+      <p class="nombre">Juliana Silva</p>
+      <p class="texto">Me encantó el producto, sin duda volvería a comprarlo y lo recomiendo a todos.</p>
     </div>
   </section>
+  
 </body>
 </html>
