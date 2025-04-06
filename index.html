@@ -20,7 +20,6 @@
       font-family: 'Archivo SemiExpanded', sans-serif;
     }
     body {
-      background: #f4f3e8;
       color: #000;
       line-height: 1.4;
     }
@@ -37,6 +36,7 @@
     .section {
       padding: 2rem 1rem;
       text-align: center;
+      background-color: #f4f3e8;
     }
     .headline {
       font-size: 2rem;
@@ -81,13 +81,18 @@
       margin-top: 1rem;
     }
     .producto-detalle {
-     background: url('fondo1.jpg') no-repeat center center;
-  background-size: cover;
-      margin: 2rem auto;
-      max-width: 600px;
+        background: url('fondo1.jpg') no-repeat center center;
+        background-size: cover;
       padding: 1rem;
       border-radius: 1rem;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      display: flex;
+    justify-content: center;
+
+    }
+
+    .producto-detalle img {
+        width: 270px;
+        border-radius: 10px;
     }
 
     .section .headline{
@@ -123,6 +128,7 @@
       font-size: 1rem;
       font-weight: bold;
       cursor: pointer;
+      box-shadow: 2px 2px 0 black;
     }
     .iconos-section {
       background: #c3c6a7;
@@ -141,21 +147,49 @@
       height: auto;
       margin-bottom: 0.5rem;
     }
-    .reseñas {
-      background: #fff;
-      padding: 2rem 1rem;
-    }
-    .reseña {
-      background: #f4f4f4;
-      padding: 1rem;
-      margin: 1rem auto;
-      max-width: 500px;
-      border-radius: 1rem;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-    }
-    .reseña strong {
-      color: #333;
-    }
+    .reseña-box {
+  display: flex;
+  align-items: center;
+  background: #6a745a;
+  padding: 1rem;
+  margin: 10px;
+  border-radius: 20px;
+  max-width: 400px;
+  color: white;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  gap: 1rem;
+}
+
+.reseña-box img {
+  width: 70px;
+  height: 70px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.reseña-texto {
+  display: flex;
+  flex-direction: column;
+}
+
+.reseña-texto .nombre {
+  font-weight: bold;
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+}
+
+.reseña-texto .estrellas {
+  color: #f6e14d;
+  font-size: 1.1rem;
+  margin-bottom: 0.25rem;
+  letter-spacing: 2px;
+}
+
+.reseña-texto .comentario {
+  font-size: 0.95rem;
+  line-height: 1.3;
+}
+
     @media (min-width: 768px) {
       .headline { font-size: 2.5rem; }
       .botones button { font-size: 1.2rem; }
@@ -166,6 +200,53 @@
         border: 1px solid black!important;
         border-radius: 0!important;
     }
+
+    .producto-slider {
+        padding: 20px;
+    }
+
+    .precio-box {
+  position: relative;
+  display: inline-block;
+  margin-top: 2rem;
+}
+
+.precio-etiqueta {
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #c3c6a7;
+  color: white;
+  padding: 2px 12px;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: bold;
+  z-index: 2;
+}
+
+.precio-contenido {
+  background: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 16px;
+  border: 2px solid #9fbf9b;
+  box-shadow: 2px 2px 0 #84bfa5;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: bold;
+}
+
+.precio-contenido .solo {
+  color: #5e3e2f;
+  font-size: 1rem;
+}
+
+.precio-contenido .cantidad {
+  font-size: 2rem;
+  color: #5e3e2f;
+}
+
   </style>
 </head>
 <body>
@@ -187,17 +268,28 @@
 
   <section class="producto-detalle">
     <img src="https://i.postimg.cc/4djCQ1WP/Chat-GPT-Image-5-abr-2025-18-36-35.png" alt="Modelo usando lavadora" />
+   
+   <div class="producto-slider">
     <h2>LAVADORA PORTÁTIL</h2>
-    <p class="precio">SÓLO POR <strong>70€</strong></p>
-    <div class="usuario">
-      <img src="https://randomuser.me/api/portraits/women/1.jpg" alt="Olivia" />
-      <div>
-        <strong>Olivia</strong><br />
-        Love this product!<br />
-        Thank you very much.
+    <div class="precio-box">
+        <span class="precio-etiqueta">PRECIO</span>
+        <div class="precio-contenido">
+          <span class="solo">SÓLO POR</span>
+          <span class="cantidad">70€</span>
+        </div>
       </div>
-    </div>
+      
+      <div class="reseña-box">
+        <img src="https://randomuser.me/api/portraits/women/1.jpg" alt="Olivia">
+        <div class="reseña-texto">
+          <p class="nombre">Olivia</p>
+          <div class="estrellas">★★★★★</div>
+          <p class="comentario">Love this product!<br>Thank you very much.</p>
+        </div>
+      </div>
+      
     <button class="btn-compra">AÑADIR AL CARRITO</button>
+   </div>
   </section>
 
   <section class="iconos-section">
