@@ -295,6 +295,21 @@
   }
 }
 
+.fade-left {
+  animation: fadeLeft 0.4s ease-in-out;
+}
+
+@keyframes fadeLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
 
   </style>
 </head>
@@ -372,6 +387,65 @@
       <p class="texto">Me encantó el producto, sin duda volvería a comprarlo y lo recomiendo a todos.</p>
     </div>
   </section>
-  
+ <script>
+  const reseñas = [
+    {
+      nombre: "Carlos Méndez",
+      estrellas: "★★★★★",
+      comentario: "Ideal para viajar. ¡Muy útil en mi camper!",
+      img: "https://randomuser.me/api/portraits/men/32.jpg"
+    },
+    {
+      nombre: "Ana López",
+      estrellas: "★★★★☆",
+      comentario: "Compacta y funcional. Me salvó en vacaciones.",
+      img: "https://randomuser.me/api/portraits/women/65.jpg"
+    },
+    {
+      nombre: "Lucas Ríos",
+      estrellas: "★★★★★",
+      comentario: "Sorprendido por su potencia. Muy recomendable.",
+      img: "https://randomuser.me/api/portraits/men/81.jpg"
+    },
+    {
+      nombre: "Isabella Torres",
+      estrellas: "★★★★★",
+      comentario: "La uso para la ropa del bebé. ¡Me encanta!",
+      img: "https://randomuser.me/api/portraits/women/22.jpg"
+    },
+    {
+      nombre: "Miguel Ángel",
+      estrellas: "★★★★☆",
+      comentario: "Buen producto. Envío rápido y fácil de usar.",
+      img: "https://randomuser.me/api/portraits/men/53.jpg"
+    }
+  ];
+
+  let index = 0;
+  const reseñaContenedor = document.querySelector(".reseña-box");
+  const imgElem = reseñaContenedor.querySelector("img");
+  const textoElem = reseñaContenedor.querySelector(".reseña-texto");
+
+  function cambiarReseña() {
+    reseñaContenedor.classList.add("fade-left");
+
+    setTimeout(() => {
+      const { nombre, estrellas, comentario, img } = reseñas[index];
+      imgElem.src = img;
+      imgElem.alt = nombre;
+      textoElem.innerHTML = `
+        <p class="nombre">${nombre}</p>
+        <div class="estrellas">${estrellas}</div>
+        <p class="comentario">${comentario}</p>
+      `;
+      reseñaContenedor.classList.remove("fade-left");
+      index = (index + 1) % reseñas.length;
+    }, 300);
+  }
+
+  setInterval(cambiarReseña, 5000);
+</script>
+
+
 </body>
 </html>
