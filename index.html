@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Lavadora Portátil</title>
+  <title>TravelWash</title>
   <link href="https://fonts.googleapis.com/css2?family=Archivo+SemiExpanded:wght@400;600&display=swap" rel="stylesheet">
   <style>
     * {
@@ -13,8 +13,9 @@
       font-family: 'Archivo SemiExpanded', sans-serif;
     }
     body {
-      background: white;
+      background: #f4f3e8;
       color: #000;
+      line-height: 1.4;
     }
     header {
       display: flex;
@@ -22,114 +23,186 @@
       padding: 1rem;
     }
     header img {
-      max-width: 200px;
+      max-width: 120px;
       height: auto;
     }
     .section {
       padding: 2rem 1rem;
       text-align: center;
     }
-    .lavado-section img {
-      max-width: 100%;
-      height: auto;
-    }
-    .lavado-section h2 {
+    .headline {
       font-size: 2rem;
+      font-weight: 900;
+      text-transform: uppercase;
       margin-bottom: 1rem;
     }
-    .lavado-section .steps {
+    .producto-main {
+      max-width: 400px;
+      margin: auto;
+    }
+    .botones {
       display: flex;
       justify-content: center;
       gap: 1rem;
+      margin: 1rem 0;
       flex-wrap: wrap;
-      margin-bottom: 2rem;
     }
-    .steps span {
+    .botones button {
+      padding: 0.5rem 1.5rem;
       font-weight: bold;
-      font-size: 1.2rem;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
     }
-    .producto-section {
-      background: #f2f2f2;
+    .btn-lava { background: white; border: 2px solid #000; }
+    .btn-enjuaga { background: #f9dc5c; }
+    .btn-centri { background: #c89bff; }
+    .producto-main img {
+      max-width: 100%;
+      height: auto;
+      margin-top: 1rem;
+    }
+    .producto-detalle {
+      background: #f4f4f4;
+      margin: 2rem auto;
+      max-width: 600px;
+      padding: 1rem;
+      border-radius: 1rem;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    .precio {
+      font-size: 1.5rem;
+      color: #000;
+    }
+    .precio strong {
+      color: #d02e2e;
+      font-size: 2rem;
+    }
+    .usuario {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .usuario img {
+      border-radius: 100%;
+      width: 50px;
+      height: 50px;
+    }
+    .btn-compra {
+      margin-top: 1rem;
+      background: #fff;
+      color: #000;
+      border: 2px solid #000;
+      padding: 0.75rem 2rem;
+      border-radius: 12px;
+      font-size: 1rem;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .iconos-section {
+      background: #c3c6a7;
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
       padding: 2rem 1rem;
       text-align: center;
     }
-    .producto-section img {
-      max-width: 100%;
-      height: auto;
-      margin-bottom: 1rem;
-    }
-    .producto-section h3 {
-      font-size: 1.5rem;
-      margin: 1rem 0 0.5rem;
-    }
-    .producto-section .precio {
-      font-size: 2rem;
-      font-weight: bold;
-      margin: 0.5rem 0;
-    }
-    .btn {
-      background: #000;
-      color: #fff;
-      padding: 0.75rem 2rem;
-      border-radius: 25px;
-      border: 2px solid #000;
-      font-size: 1rem;
-      cursor: pointer;
-      transition: 0.3s;
-    }
-    .btn:hover {
-      background: #fff;
-      color: #000;
-    }
-    .iconos-section {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 2rem;
-      padding: 2rem 1rem;
+    .iconos-section div {
+      flex: 1 1 100px;
+      margin: 1rem;
     }
     .iconos-section img {
-      width: 80px;
+      width: 60px;
       height: auto;
+      margin-bottom: 0.5rem;
+    }
+    .reseñas {
+      background: #fff;
+      padding: 2rem 1rem;
+    }
+    .reseña {
+      background: #f4f4f4;
+      padding: 1rem;
+      margin: 1rem auto;
+      max-width: 500px;
+      border-radius: 1rem;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    }
+    .reseña strong {
+      color: #333;
     }
     @media (min-width: 768px) {
-      .lavado-section .steps {
-        gap: 2rem;
-      }
-      .producto-section {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-      }
+      .headline { font-size: 2.5rem; }
+      .botones button { font-size: 1.2rem; }
     }
   </style>
 </head>
 <body>
   <header>
-    <img src="https://i.postimg.cc/XvDpfTdC/Chat-GPT-Image-5-abr-2025-18-30-32.png" alt="Logo" />
+    <img src="https://i.postimg.cc/XvDpfTdC/Chat-GPT-Image-5-abr-2025-18-30-32.png" alt="TravelWash Logo" />
   </header>
 
-  <section class="section lavado-section">
-    <div class="steps">
-      <span>LAVA</span>
-      <span>ENJUAGA</span>
-      <span>CENTRIFUGA</span>
+  <section class="section">
+    <h1 class="headline">Limpia tu ropa en cualquier parte</h1>
+    <div class="producto-main">
+      <div class="botones">
+        <button class="btn-lava">LAVA</button>
+        <button class="btn-enjuaga">ENJUAGA</button>
+        <button class="btn-centri">CENTRIFUGA</button>
+      </div>
+      <img src="producto.png" alt="Lavadora Portátil" />
     </div>
-    <img src="producto.png" alt="Lavadora Portátil" />
   </section>
 
-  <section class="section producto-section">
-    <img src="https://i.postimg.cc/4djCQ1WP/Chat-GPT-Image-5-abr-2025-18-36-35.png" alt="Producto con modelo" />
-    <h3>LAVADORA PORTÁTIL</h3>
-    <p class="precio">SÓLO POR 70€</p>
-    <button class="btn">AÑADIR AL CARRITO</button>
+  <section class="producto-detalle">
+    <img src="https://i.postimg.cc/4djCQ1WP/Chat-GPT-Image-5-abr-2025-18-36-35.png" alt="Modelo usando lavadora" />
+    <h2>LAVADORA PORTÁTIL</h2>
+    <p class="precio">SÓLO POR <strong>70€</strong></p>
+    <div class="usuario">
+      <img src="https://randomuser.me/api/portraits/women/1.jpg" alt="Olivia" />
+      <div>
+        <strong>Olivia</strong><br />
+        Love this product!<br />
+        Thank you very much.
+      </div>
+    </div>
+    <button class="btn-compra">AÑADIR AL CARRITO</button>
   </section>
 
-  <section class="section iconos-section">
-    <img src="avion.png" alt="Icono Avión" />
-    <img src="ropa.png" alt="Icono Ropa" />
-    <img src="envio.png" alt="Icono Envío" />
-    <img src="energia.png" alt="Icono Energía" />
+  <section class="iconos-section">
+    <div>
+      <img src="avion.png" alt="Icono avión" />
+      <p><strong>VIAJAR</strong></p>
+    </div>
+    <div>
+      <img src="ropa.png" alt="Icono ropa" />
+      <p><strong>8L</strong></p>
+    </div>
+    <div>
+      <img src="energia.png" alt="Icono energía" />
+      <p><strong>12V</strong></p>
+    </div>
+    <div>
+      <img src="envio.png" alt="Icono envío" />
+      <p><strong>ENTREGA 24H</strong></p>
+    </div>
+  </section>
+
+  <section class="reseñas">
+    <div class="reseña">
+      <p><strong>Juliana Silva</strong><br />
+      Me encantó el producto, sin duda volvería a comprarlo y lo recomiendo a todos.</p>
+    </div>
+    <div class="reseña">
+      <p><strong>Juliana Silva</strong><br />
+      Me encantó el producto, sin duda volvería a comprarlo y lo recomiendo a todos.</p>
+    </div>
+    <div class="reseña">
+      <p><strong>Juliana Silva</strong><br />
+      Me encantó el producto, sin duda volvería a comprarlo y lo recomiendo a todos.</p>
+    </div>
   </section>
 </body>
 </html>
