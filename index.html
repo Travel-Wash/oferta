@@ -6,6 +6,13 @@
   <title>TravelWash</title>
   <link href="https://fonts.googleapis.com/css2?family=Archivo+SemiExpanded:wght@400;600&display=swap" rel="stylesheet">
   <style>
+
+@font-face {
+  font-family: 'KeeponTruckin';
+  src: url('KeeponTruckin.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
     * {
       margin: 0;
       padding: 0;
@@ -21,6 +28,7 @@
       display: flex;
       justify-content: center;
       padding: 1rem;
+      background-color: #ebe2c8;
     }
     header img {
       max-width: 120px;
@@ -35,16 +43,25 @@
       font-weight: 900;
       text-transform: uppercase;
       margin-bottom: 1rem;
+      
     }
+
+
+    .headline {
+  font-family: 'KeeponTruckin', sans-serif;
+}
+
     .producto-main {
       max-width: 400px;
       margin: auto;
+      display: flex;
+    justify-content: center;
     }
     .botones {
       display: flex;
       justify-content: center;
       gap: 1rem;
-      margin: 1rem 0;
+      margin: 8rem 0;
       flex-wrap: wrap;
     }
     .botones button {
@@ -70,6 +87,11 @@
       padding: 1rem;
       border-radius: 1rem;
       box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .section .headline{
+        max-width: 600px;
+        margin: auto;
     }
     .precio {
       font-size: 1.5rem;
@@ -137,6 +159,12 @@
       .headline { font-size: 2.5rem; }
       .botones button { font-size: 1.2rem; }
     }
+
+    .pro {
+        height: 40px;
+        border: 1px solid black!important;
+        border-radius: 0!important;
+    }
   </style>
 </head>
 <body>
@@ -148,11 +176,11 @@
     <h1 class="headline">Limpia tu ropa en cualquier parte</h1>
     <div class="producto-main">
       <div class="botones">
-        <button class="btn-lava">LAVA</button>
-        <button class="btn-enjuaga">ENJUAGA</button>
-        <button class="btn-centri">CENTRIFUGA</button>
+        <button class="btn-lava pro">LAVA</button>
+        <button class="btn-enjuaga pro">ENJUAGA</button>
+        <button class="btn-centri pro">CENTRIFUGA</button>
       </div>
-      <img src="producto.png" alt="Lavadora Portátil" />
+      <img src="https://raw.githubusercontent.com/Travel-Wash/oferta/refs/heads/main/producto.png" alt="Lavadora Portátil" />
     </div>
   </section>
 
