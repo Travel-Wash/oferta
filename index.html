@@ -1,173 +1,135 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>Lavadora USB portátil | TURBOWASH</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lavadora Portátil</title>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+SemiExpanded:wght@400;600&display=swap" rel="stylesheet">
   <style>
-    body {
-      font-family: Arial, sans-serif;
+    * {
       margin: 0;
-      background: #f5f5f5;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Archivo SemiExpanded', sans-serif;
     }
-    .container {
-      max-width: 1000px;
-      margin: auto;
+    body {
       background: white;
-      padding: 20px;
+      color: #000;
+    }
+    header {
       display: flex;
-      gap: 20px;
+      justify-content: center;
+      padding: 1rem;
     }
-    .gallery {
-      flex: 1;
-    }
-    .main-img {
-      width: 100%;
+    header img {
+      max-width: 200px;
       height: auto;
-      border: 1px solid #ccc;
     }
-    .thumbnails {
+    .section {
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+    .lavado-section img {
+      max-width: 100%;
+      height: auto;
+    }
+    .lavado-section h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+    .lavado-section .steps {
       display: flex;
-      gap: 5px;
-      margin-top: 10px;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-bottom: 2rem;
     }
-    .thumbnail {
-      width: 60px;
-      height: 60px;
-      object-fit: cover;
-      cursor: pointer;
-      border: 2px solid transparent;
-    }
-    .thumbnail.active {
-      border: 2px solid #00b300;
-    }
-    .details {
-      flex: 1;
-    }
-    .topbar {
-      display: flex;
-      gap: 20px;
-      font-size: 14px;
-      align-items: center;
-      margin-bottom: 10px;
-    }
-    .topbar img {
-      height: 20px;
-    }
-    .title {
-      font-size: 22px;
+    .steps span {
       font-weight: bold;
+      font-size: 1.2rem;
     }
-    .rating {
-      color: #ffa500;
-      margin: 5px 0;
+    .producto-section {
+      background: #f2f2f2;
+      padding: 2rem 1rem;
+      text-align: center;
     }
-    .price-box {
-      margin: 20px 0;
+    .producto-section img {
+      max-width: 100%;
+      height: auto;
+      margin-bottom: 1rem;
     }
-    .option {
-      display: inline-block;
-      border: 1px solid #ccc;
-      padding: 10px 15px;
-      margin-right: 10px;
+    .producto-section h3 {
+      font-size: 1.5rem;
+      margin: 1rem 0 0.5rem;
+    }
+    .producto-section .precio {
+      font-size: 2rem;
+      font-weight: bold;
+      margin: 0.5rem 0;
+    }
+    .btn {
+      background: #000;
+      color: #fff;
+      padding: 0.75rem 2rem;
+      border-radius: 25px;
+      border: 2px solid #000;
+      font-size: 1rem;
       cursor: pointer;
+      transition: 0.3s;
     }
-    .option.active {
-      border-color: #00b300;
-      background: #e6ffe6;
+    .btn:hover {
+      background: #fff;
+      color: #000;
     }
-    .price {
-      font-size: 24px;
-      color: #e60000;
+    .iconos-section {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+      padding: 2rem 1rem;
     }
-    .discount {
-      text-decoration: line-through;
-      margin-left: 10px;
-      color: #888;
+    .iconos-section img {
+      width: 80px;
+      height: auto;
     }
-    .add-cart {
-      background: #00b300;
-      color: white;
-      border: none;
-      padding: 12px 20px;
-      font-size: 16px;
-      cursor: pointer;
-      margin-top: 10px;
-    }
-    .delivery {
-      margin-top: 10px;
-      font-size: 14px;
-      color: #444;
+    @media (min-width: 768px) {
+      .lavado-section .steps {
+        gap: 2rem;
+      }
+      .producto-section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
     }
   </style>
 </head>
 <body>
+  <header>
+    <img src="https://i.postimg.cc/XvDpfTdC/Chat-GPT-Image-5-abr-2025-18-30-32.png" alt="Logo" />
+  </header>
 
-<div class="container">
-  <div class="gallery">
-    <img id="mainImage" src="https://i.postimg.cc/PqPQSQ9p/Chat-GPT-Image-5-abr-2025-18-36-35.png" class="main-img" alt="Producto">
-    <div class="thumbnails">
-      <img class="thumbnail active" src="https://i.postimg.cc/PqPQSQ9p/Chat-GPT-Image-5-abr-2025-18-36-35.png" alt="thumb">
-      <img class="thumbnail" src="/mnt/data/image.png" alt="thumb 2">
+  <section class="section lavado-section">
+    <div class="steps">
+      <span>LAVA</span>
+      <span>ENJUAGA</span>
+      <span>CENTRIFUGA</span>
     </div>
-  </div>
+    <img src="producto.png" alt="Lavadora Portátil" />
+  </section>
 
-  <div class="details">
-    <div class="topbar">
-      <img src="https://images.vigo-shop.com/general/banner_icons/delivery_icon.svg" alt="delivery">
-      <span>Entrega 2-4 días</span>
-      <img src="https://images.vigo-shop.com/general/banner_icons/COD_icon.svg" alt="COD">
-      <span>Pago contra reembolso</span>
-      <img src="https://images.vigo-shop.com/general/flags/flag-icon-es.svg" alt="Spain">
-      <span>Almacén español</span>
-    </div>
+  <section class="section producto-section">
+    <img src="https://i.postimg.cc/4djCQ1WP/Chat-GPT-Image-5-abr-2025-18-36-35.png" alt="Producto con modelo" />
+    <h3>LAVADORA PORTÁTIL</h3>
+    <p class="precio">SÓLO POR 70€</p>
+    <button class="btn">AÑADIR AL CARRITO</button>
+  </section>
 
-    <div class="title">Lavadora USB portátil | TURBOWASH</div>
-    <div class="rating">⭐ 4.6 / 5 (Opiniones: 2852)</div>
-    <p>La minilavadora es un artilugio revolucionario que le permite revitalizar sus prendas incluso cuando no dispone de una lavadora tradicional.</p>
-
-    <div class="price-box">
-      <div id="options">
-        <div class="option active" data-price="70">1x 70€</div>
-        <div class="option" data-price="99">2x 99€</div>
-      </div>
-      <div class="price-section">
-        <span class="price" id="price">70€</span>
-        <span class="discount">100€</span>
-        <span style="color: #e60000;">-30%</span>
-      </div>
-      <button class="add-cart">🛒 Añadir a la cesta</button>
-    </div>
-
-    <div class="delivery">✅ Disponible. Envío desde almacén español.</div>
-    <div class="delivery">🚚 Entrega en 2-4 días con Delnext</div>
-    <div class="delivery">🔄 Política de devolución de 14 días</div>
-  </div>
-</div>
-
-<script>
-  // Galería de imágenes
-  const thumbnails = document.querySelectorAll(".thumbnail");
-  const mainImage = document.getElementById("mainImage");
-  thumbnails.forEach(thumb => {
-    thumb.addEventListener("click", () => {
-      thumbnails.forEach(t => t.classList.remove("active"));
-      thumb.classList.add("active");
-      mainImage.src = thumb.src;
-    });
-  });
-
-  // Opciones de cantidad y precio
-  const options = document.querySelectorAll(".option");
-  const price = document.getElementById("price");
-
-  options.forEach(opt => {
-    opt.addEventListener("click", () => {
-      options.forEach(o => o.classList.remove("active"));
-      opt.classList.add("active");
-      price.innerText = opt.dataset.price + "€";
-    });
-  });
-</script>
-
+  <section class="section iconos-section">
+    <img src="avion.png" alt="Icono Avión" />
+    <img src="ropa.png" alt="Icono Ropa" />
+    <img src="envio.png" alt="Icono Envío" />
+    <img src="energia.png" alt="Icono Energía" />
+  </section>
 </body>
 </html>
