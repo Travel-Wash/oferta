@@ -382,6 +382,60 @@
   height: 40px;
 }
 
+
+    .burbujas {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.burbuja {
+  position: absolute;
+  bottom: 0;
+  width: 15px;
+  height: 15px;
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 50%;
+  animation: subir 4s ease-in infinite;
+  opacity: 0;
+}
+
+.burbuja:nth-child(1) { left: 20%; animation-delay: 0s; }
+.burbuja:nth-child(2) { left: 40%; animation-delay: 1s; }
+.burbuja:nth-child(3) { left: 60%; animation-delay: 2s; }
+.burbuja:nth-child(4) { left: 80%; animation-delay: 3s; }
+.burbuja:nth-child(5) { left: 50%; animation-delay: 1.5s; }
+
+@keyframes subir {
+  0% {
+    bottom: 0;
+    opacity: 0;
+    transform: translateY(0) scale(0.8);
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    bottom: 120%;
+    opacity: 0;
+    transform: translateY(-20px) scale(1.2);
+  }
+}
+
+.burbujas .burbuja {
+  display: none;
+}
+
+.lavadora.activa .burbujas .burbuja {
+  display: block;
+}
+
   </style>
 </head>
 <body>
@@ -474,6 +528,13 @@
   <img id="powerIcon" src="off.png" alt="Power Off" />
 </button>
 
+<div class="burbujas">
+  <div class="burbuja"></div>
+  <div class="burbuja"></div>
+  <div class="burbuja"></div>
+  <div class="burbuja"></div>
+  <div class="burbuja"></div>
+</div>
 
   
  <script>
@@ -536,13 +597,14 @@
 
 
 
-     let encendido = false;
+   let encendido = false;
 
   const powerButton = document.getElementById("powerButton");
   const powerIcon = document.getElementById("powerIcon");
   const lavadoraImg = document.getElementById("imgLavadora");
   const textosRojos = document.querySelectorAll(".rojonegativo");
   const textosVerdes = document.querySelectorAll(".verdepositivo");
+  const lavadoraBox = document.querySelector(".lavadora");
 
   powerButton.addEventListener("click", () => {
     encendido = !encendido;
@@ -551,6 +613,7 @@
       powerIcon.src = "on.png";
       lavadoraImg.src = "lavadoratradicional.png";
       lavadoraImg.classList.add("spin");
+      lavadoraBox.classList.add("activa");
 
       textosRojos.forEach((el, i) => {
         el.style.display = "block";
@@ -567,7 +630,9 @@
       powerIcon.src = "off.png";
       lavadoraImg.src = "lavadora.png";
       lavadoraImg.classList.remove("spin");
+      lavadoraBox.classList.remove("activa");
 
+      // Detiene y oculta todo
       textosRojos.forEach(el => {
         el.style.display = "none";
         el.classList.remove("rotate-text");
@@ -575,7 +640,7 @@
 
       textosVerdes.forEach(el => {
         el.style.display = "block";
-        el.classList.add("rotate-text");
+        el.classList.remove("rotate-text"); // detiene animación
       });
     }
   });
