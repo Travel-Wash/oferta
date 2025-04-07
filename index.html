@@ -310,6 +310,77 @@
   }
 }
 
+.lavadora {
+  position: relative;
+  width: 300px;
+  margin: 100px auto;
+  text-align: center;
+}
+
+.lavadora img {
+  width: 100%;
+  transition: transform 1s linear;
+}
+
+.rojonegativo, .verdepositivo {
+  position: absolute;
+  padding: 6px 12px;
+  border-radius: 20px;
+  background: #e74c3c;
+  color: white;
+  font-weight: bold;
+  white-space: nowrap;
+  display: none;
+}
+
+.verdepositivo {
+  background: #556b2f;
+}
+
+.rojonegativo:nth-child(1) { top: 20%; left: -130px; }
+.rojonegativo:nth-child(2) { top: -40px; right: -130px; }
+.rojonegativo:nth-child(3) { bottom: -40px; right: -110px; }
+
+.verdepositivo:nth-child(5) { top: 20%; left: -130px; }
+.verdepositivo:nth-child(6) { top: -40px; right: -130px; }
+.verdepositivo:nth-child(7) { bottom: -40px; right: -110px; }
+
+@keyframes rotateText {
+  0% { transform: rotate(0deg) translateX(150px) rotate(0deg); }
+  100% { transform: rotate(360deg) translateX(150px) rotate(-360deg); }
+}
+
+@keyframes spinMachine {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.spin {
+  animation: spinMachine 3s linear infinite;
+}
+
+.rotate-text {
+  animation: rotateText 4s linear infinite;
+}
+
+.sticky-power {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  border-radius: 50%;
+  border: 2px solid #ccc;
+  box-shadow: 0 0 20px rgba(0,0,0,0.2);
+  padding: 12px;
+  z-index: 9999;
+  cursor: pointer;
+}
+
+.sticky-power img {
+  width: 40px;
+  height: 40px;
+}
 
   </style>
 </head>
@@ -387,6 +458,24 @@
       <p class="texto">Me encantó el producto, sin duda volvería a comprarlo y lo recomiendo a todos.</p>
     </div>
   </section>
+
+
+  <div class="lavadora">
+  <span class="rojonegativo">LAVADORA INCOMPLETA</span>
+  <span class="rojonegativo">ALTO COSTE</span>
+  <span class="rojonegativo">COMPLEJO DE USAR</span>
+  <img id="imgLavadora" src="lavadoratradicional.png" alt="Lavadora" />
+  <span class="verdepositivo">LAVADOS EXPRESS</span>
+  <span class="verdepositivo">AHORRA TIEMPO</span>
+  <span class="verdepositivo">FÁCIL DE USAR</span>
+</div>
+
+<button id="powerButton" class="sticky-power">
+  <img id="powerIcon" src="off.png" alt="Power Off" />
+</button>
+
+
+  
  <script>
   const reseñas = [
     {
@@ -444,6 +533,52 @@
   }
 
   setInterval(cambiarReseña, 5000);
+
+
+
+     let encendido = false;
+
+  const powerButton = document.getElementById("powerButton");
+  const powerIcon = document.getElementById("powerIcon");
+  const lavadoraImg = document.getElementById("imgLavadora");
+  const textosRojos = document.querySelectorAll(".rojonegativo");
+  const textosVerdes = document.querySelectorAll(".verdepositivo");
+
+  powerButton.addEventListener("click", () => {
+    encendido = !encendido;
+
+    if (encendido) {
+      powerIcon.src = "on.png";
+      lavadoraImg.src = "lavadoratradicional.png";
+      lavadoraImg.classList.add("spin");
+
+      textosRojos.forEach((el, i) => {
+        el.style.display = "block";
+        el.style.animationDelay = `${i * 0.5}s`;
+        el.classList.add("rotate-text");
+      });
+
+      textosVerdes.forEach(el => {
+        el.style.display = "none";
+        el.classList.remove("rotate-text");
+      });
+
+    } else {
+      powerIcon.src = "off.png";
+      lavadoraImg.src = "lavadora.png";
+      lavadoraImg.classList.remove("spin");
+
+      textosRojos.forEach(el => {
+        el.style.display = "none";
+        el.classList.remove("rotate-text");
+      });
+
+      textosVerdes.forEach(el => {
+        el.style.display = "block";
+        el.classList.add("rotate-text");
+      });
+    }
+  });
 </script>
 
 
