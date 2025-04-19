@@ -734,6 +734,17 @@ flex-direction: column;
 }
 
 
+    .btn-compra.sticky {
+  position: fixed;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 999;
+  width: calc(100% - 40px);
+  max-width: 320px;
+}
+
+
   </style>
 </head>
 <body>
@@ -775,7 +786,8 @@ flex-direction: column;
         </div>
       </div>
       
-    <button class="btn-compra">AÑADIR AL CARRITO</button>
+    <button class="btn-compra" id="btnCompra">Comprar en Contrarembolso</button>
+
      <div class="info-envio">
   <p>
     <img src="camion.png" alt="camión" />
@@ -952,6 +964,21 @@ flex-direction: column;
 
   setInterval(cambiarReseña, 5000);
 
+
+
+    const btnCompra = document.getElementById("btnCompra");
+  const originalOffsetTop = btnCompra.offsetTop;
+
+  window.addEventListener("scroll", () => {
+    const scrollY = window.scrollY + window.innerHeight;
+    const btnBottom = btnCompra.getBoundingClientRect().bottom + window.scrollY;
+
+    if (scrollY < btnBottom) {
+      btnCompra.classList.add("sticky");
+    } else if (scrollY >= btnBottom + 50) {
+      btnCompra.classList.remove("sticky");
+    }
+  });
 
 
 </script>
