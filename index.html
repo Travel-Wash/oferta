@@ -151,6 +151,70 @@
       height: auto;
       margin-bottom: 0.5rem;
     }
+
+
+    @media (max-width: 768px) {
+  .producto-detalle {
+    flex-direction: column;
+    text-align: center;
+    padding: 2rem 1rem;
+  }
+
+  .producto-detalle img {
+    width: 100%;
+    max-width: 350px;
+    margin: 0 auto 1.5rem;
+  }
+
+  .producto-slider {
+    width: 100%;
+    max-width: 100%;
+    padding: 0;
+  }
+
+  .precio-box {
+    margin: 1rem auto;
+  }
+}
+
+
+    .otros-reviews {
+  background-color: #a2b18f;
+  padding: 2rem 1rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  justify-items: center;
+}
+
+@media (min-width: 640px) {
+  .otros-reviews {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 960px) {
+  .otros-reviews {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+
+    @media (max-width: 600px) {
+  .botones {
+    margin: 4rem 0;
+  }
+
+  .botones button {
+    padding: 0.4rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  .headline {
+    font-size: 1.8rem;
+  }
+}
+
     .reseña-box {
   display: flex;
   align-items: center;
