@@ -502,6 +502,59 @@
   }
 }
 
+    .como-usar {
+  padding: 3rem 1rem;
+  background: #f9f8f5;
+  text-align: center;
+}
+
+.como-usar-titulo {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+  color: #5e3e2f;
+  font-family: 'KeeponTruckin', sans-serif;
+}
+
+.como-usar-contenido {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.como-usar-contenido img {
+  width: 100%;
+  max-width: 420px;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+}
+
+.como-usar-pasos {
+  text-align: left;
+  font-size: 1rem;
+  line-height: 1.8;
+  max-width: 400px;
+  color: #333;
+}
+
+.como-usar-pasos p {
+  margin-bottom: 1rem;
+  padding-left: 1.2rem;
+  position: relative;
+}
+
+.como-usar-pasos p::before {
+  content: '✔';
+  position: absolute;
+  left: 0;
+  color: #6a745a;
+  font-weight: bold;
+}
+
 
 
   </style>
@@ -608,7 +661,20 @@
   <div class="burbuja"></div>
 </div>
 
-  
+  <section class="como-usar">
+  <h2 class="como-usar-titulo">¿Cómo usar TravelWash?</h2>
+  <div class="como-usar-contenido">
+    <img src="https://i.postimg.cc/Y0LKjrYq/Chat-GPT-Image-19-abr-2025-12-54-31.png" alt="Cómo usar TravelWash">
+    <div class="como-usar-pasos">
+      <p>1. Abre la lavadora y añade agua y detergente.</p>
+      <p>2. Introduce la ropa que desees lavar.</p>
+      <p>3. Elige el modo adecuado según la suciedad.</p>
+      <p>4. Pulsa durante 2 segundos para iniciar.</p>
+      <p>5. ¡Listo! En minutos tendrás tu ropa limpia.</p>
+    </div>
+  </div>
+</section>
+
  <script>
   const reseñas = [
     {
